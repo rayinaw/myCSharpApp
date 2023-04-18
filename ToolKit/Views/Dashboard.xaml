@@ -1,0 +1,269 @@
+﻿<Window x:Class="ToolKit.Views.Dashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToolKit.Views"
+        xmlns:viewModel="clr-namespace:ToolKit.ViewModels"
+        mc:Ignorable="d"
+        Title="Dashboard" Height="450" Width="600"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown"
+        Background="Transparent"
+        AllowsTransparency="True"
+        >
+    <Window.DataContext>
+        <viewModel:DashboardViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+    </Window.Resources>
+
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleanToVisibility}"/>
+    </Window.Visibility>
+    
+    <Grid>
+        <Border>
+            <Border.Background>
+                <ImageBrush ImageSource="/Images/BackgroundDashBoard.png"></ImageBrush>
+            </Border.Background>
+        </Border>
+
+        <StackPanel VerticalAlignment="Center">
+            <Button x:Name="btnOpenCalculator"     
+                            Command="{Binding OpenCalculatorCommand}"
+                            BorderThickness="0"
+                            Content="Calculator"
+                            Foreground="White"
+                            FontSize="18"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="0,0,0,0"
+                            Click="btnOpenCalculator_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="DeepSkyBlue"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#0E6087"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="200" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="btnOpenMaxMinFinder"     
+                            Command="{Binding OpenMaxMinFinderCommand}"
+                            BorderThickness="0"
+                            Content="Max-Min Finder"
+                            Foreground="White"
+                            FontSize="18"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="0,10,0,0"
+                            Click="btnOpenMaxMinFinder_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="DeepSkyBlue"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#0E6087"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="200" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+            <Button x:Name="btnOpenNumberToWordConverter"     
+                            Command="{Binding OpenNumberToWordConverterCommand}"
+                            BorderThickness="0"
+                            Content="Number to word"
+                            Foreground="White"
+                            FontSize="18"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="0,10,0,0"
+                            Click="btnOpenNumberToWordConverter_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="DeepSkyBlue"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#0E6087"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="200" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="btnOpenBaseConverter"     
+                            Command="{Binding OpenBaseConverterCommand}"
+                            BorderThickness="0"
+                            Content="Base Converter"
+                            Foreground="White"
+                            FontSize="18"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="0,10,0,0"
+                            Click="btnOpenBaseConverter_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="DeepSkyBlue"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#0E6087"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="200" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="btnOpenGradeTracker"     
+                            Command="{Binding OpenGradeTrackerCommand}"
+                            BorderThickness="0"
+                            Content="Grade Tracker"
+                            Foreground="White"
+                            FontSize="18"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="0,10,0,0"
+                            Click="btnOpenGradeTracker_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="DeepSkyBlue"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#0E6087"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="200" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"></RowDefinition>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="25"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnMinimize"
+                        Content="-"
+                        Foreground="White"
+                        FontSize="16"
+                        Cursor="Hand"
+                        Grid.Column="2"
+                        Click="btnMinimize_Click"
+                        FontFamily="Monsterrat"
+                        >
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="DeepSkyBlue"></Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="LightBlue" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center">
+
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+
+                </Button.Template>
+            </Button>
+            <Button x:Name="btnClose"
+                        Content="X"
+                        Foreground="White"
+                        FontSize="16"
+                        Cursor="Hand"
+                        Grid.Column="3"
+                        Click="btnClose_Click"
+                        FontFamily="Monsterrat"
+                        >
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#eb420e"></Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#fc6e42" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center">
+
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

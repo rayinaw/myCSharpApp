@@ -1,0 +1,291 @@
+﻿<Window x:Class="ToolKit.Views.MaxMinFinder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToolKit.Views"
+        xmlns:viewModel="clr-namespace:ToolKit.ViewModels"
+        mc:Ignorable="d"
+        Title="MaxMinFinder" Height="450" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown"
+        Background="Transparent"
+        AllowsTransparency="True">
+    <Window.DataContext>
+        <viewModel:MaxMinFinderViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+    </Window.Resources>
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleanToVisibility}"/>
+    </Window.Visibility>
+    <Grid>
+        <Border>
+            <Border.Background>
+                <ImageBrush ImageSource="/Images/4.png"></ImageBrush>
+            </Border.Background>
+            <StackPanel Margin="150,90,150,90">
+                <TextBlock
+                    Text="Max-Min Finder"
+                    HorizontalAlignment="Center"
+                    FontSize="30"
+                    Margin="0,10,0,0"
+                    Foreground="#BCFEFE"
+                    >
+                </TextBlock>
+                <StackPanel Orientation="Horizontal"
+                            Margin="0,20,0,0"
+                            HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            Text="Num 1:"
+                            Margin="0,0,5,0">
+                            
+                        </TextBlock>
+                        <TextBox Width="80"
+                                 TextAlignment="Left"
+                                 Text="{Binding NumOne, UpdateSourceTrigger=PropertyChanged}"
+                                 >
+
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                                Margin="20,0,20,0">
+                        <TextBlock
+                            Text="Num 2:"
+                            Margin="0,0,5,0">
+
+                        </TextBlock>
+                        <TextBox Width="80"
+                                 TextAlignment="Left"
+                                 Text="{Binding NumTwo, UpdateSourceTrigger=PropertyChanged}">
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            Text="Num 3:"
+                            Margin="0,0,5,0">
+
+                        </TextBlock>
+                        <TextBox Width="80"
+                                 TextAlignment="Left"
+                                 Text="{Binding NumThree, UpdateSourceTrigger=PropertyChanged}">
+
+                        </TextBox>
+                    </StackPanel>
+
+                </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                Margin="0,40,0,0">
+                    <Button x:Name="btnFind"     
+                            Command="{Binding FindCommand}"
+                            BorderThickness="0"
+                            Content="Find"
+                            Foreground="White"
+                            FontSize="14"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="0,0,0,0"
+                            Click="btnFind_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="DeepSkyBlue"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#0E6087"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="80" Height="30"
+                                        CornerRadius="15"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btnClear"     
+                            Command="{Binding ClearCommand}"
+                            BorderThickness="0"
+                            Content="Clear"
+                            Foreground="White"
+                            FontSize="14"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="40,0,0,0"
+                            Click="btnClear_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="DeepSkyBlue"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#0E6087"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="80" Height="30"
+                                        CornerRadius="15"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btnExit"     
+                            Command="{Binding ExitCommand}"
+                            BorderThickness="0"
+                            Content="Exit"
+                            Foreground="White"
+                            FontSize="14"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="40,0,0,0"
+                            Click="btnExit_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="DeepSkyBlue"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#0E6087"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="80" Height="30"
+                                        CornerRadius="15"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+                <TextBlock Margin="0,20,0,0"
+                           Text="Result"
+                           FontSize="15"
+                           TextAlignment="Center">
+                </TextBlock>
+                <StackPanel Orientation="Horizontal"
+                            Margin="0,10,0,0"
+                            HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0,0,50,0">
+                        <TextBlock Margin="0,0,0,0"
+                                   Text="Max:">
+                            
+                        </TextBlock>
+                        <Border BorderThickness="0,0,0,1"
+                                BorderBrush="DeepSkyBlue">
+                            <TextBlock Text="{Binding Max}"
+                                   Width="100">
+
+                            </TextBlock>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0,0,0,0"
+                                   Text="Min:">
+
+                        </TextBlock>
+                        <Border BorderThickness="0,0,0,1"
+                                BorderBrush="DeepSkyBlue">
+                            <TextBlock Text="{Binding Min}"
+                                   Width="100">
+
+                            </TextBlock>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"></RowDefinition>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="25"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnMinimize"
+                        Content="-"
+                        Foreground="White"
+                        FontSize="16"
+                        Cursor="Hand"
+                        Grid.Column="2"
+                        Click="btnMinimize_Click"
+                        FontFamily="Monsterrat"
+                        >
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="DeepSkyBlue"></Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="LightBlue" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center">
+
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+
+                </Button.Template>
+            </Button>
+            <Button x:Name="btnClose"
+                        Content="X"
+                        Foreground="White"
+                        FontSize="16"
+                        Cursor="Hand"
+                        Grid.Column="3"
+                        Click="btnClose_Click"
+                        FontFamily="Monsterrat"
+                        >
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#eb420e"></Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#fc6e42" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center">
+
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

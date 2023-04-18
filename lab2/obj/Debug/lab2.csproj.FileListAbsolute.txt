@@ -1,0 +1,17 @@
+C:\Users\rayin_awarf\Desktop\work\cSharp\lab2\bin\Debug\lab2.exe.config
+C:\Users\rayin_awarf\Desktop\work\cSharp\lab2\bin\Debug\lab2.exe
+C:\Users\rayin_awarf\Desktop\work\cSharp\lab2\obj\Debug\lab2.csproj.AssemblyReference.cache
+C:\Users\rayin_awarf\Desktop\work\cSharp\lab2\obj\Debug\lab2.csproj.SuggestedBindingRedirects.cache
+C:\Users\rayin_awarf\Desktop\work\cSharp\lab2\obj\Debug\lab2.Bai1.resources
+C:\Users\rayin_awarf\Desktop\work\cSharp\lab2\obj\Debug\lab2.Bai2.resources
+C:\Users\rayin_awarf\Desktop\work\cSharp\lab2\obj\Debug\lab2.Bai3.resources
+C:\Users\rayin_awarf\Desktop\work\cSharp\lab2\obj\Debug\lab2.Dashboard.resources
+C:\Users\rayin_awarf\Desktop\work\cSharp\lab2\obj\Debug\lab2.Properties.Resources.resources
+C:\Users\rayin_awarf\Desktop\work\cSharp\lab2\obj\Debug\lab2.csproj.GenerateResource.cache
+C:\Users\rayin_awarf\Desktop\work\cSharp\lab2\obj\Debug\lab2.csproj.CoreCompileInputs.cache
+C:\Users\rayin_awarf\Desktop\work\cSharp\lab2\obj\Debug\lab2.exe
+C:\Users\rayin_awarf\Desktop\work\cSharp\lab2\obj\Debug\lab2.pdb
+C:\Users\rayin_awarf\Desktop\work\cSharp\lab2\bin\Debug\lab2.pdb
+C:\Users\rayin_awarf\Desktop\work\cSharp\lab2\obj\Debug\lab2.Bai4.resources
+C:\Users\rayin_awarf\Desktop\work\cSharp\lab2\obj\Debug\lab2.Bai4_NhapDuLieu.resources
+C:\Users\rayin_awarf\Desktop\work\cSharp\lab2\obj\Debug\lab2.Bai5.resources
